@@ -1,0 +1,753 @@
+.comparegrid-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+.comparegrid-content .comparegrid-sidebar {
+  width: 25%;
+  float: left;
+}
+
+.comparegrid-content .comparegrid-main {
+  width: calc(75% - 60px); 
+  float: left;
+  padding: 0 0 30px 30px;
+}
+
+.compare-grid-static-links {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+  width:  100%;
+  float: none;
+  overflow: hidden;
+  color: #52bca6;
+}
+
+.compare-grid-static-links ul {
+  list-style: none;
+}
+
+.compare-grid-static-links ul li {
+  display: inline-block;
+  padding: 30px;
+}
+
+.chr-the-range {
+  position: relative;
+  margin-top:  35px;
+}
+.chr-the-range .chr-range-list {
+  list-style: none;
+  margin:  0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(82,188,166,0.1);
+    border-radius: 13px;
+    padding: 3px;
+    height:  25px;
+}
+
+.chr-the-range .chr-range-list::after,
+.chr-the-range .chr-range-list::before {
+  content: "";
+    display: block;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid black;
+    position: absolute;
+    right: 7px;
+    top: -10px;
+}
+
+.chr-the-range .chr-range-list::after {
+  right: auto;
+  left: 7px;
+}
+
+.chr-the-range .progress {
+  background: linear-gradient(to right, rgba(82,188,166,0.5) 0% ,rgba(82,188,166,1) 100%);
+  position:  absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 13px 0 0 13px;
+}
+
+.chr-the-range .chr-range-list > div:not(.progress) {
+    margin-top: -65px;
+    font-size: 12px;
+    opacity: 0; 
+}
+
+.chr-the-range .chr-range-list > div:first-child,
+.chr-the-range .chr-range-list > div:nth-last-child(2) {
+  opacity: 1;
+}
+
+.chr-the-range .chr-range-list > div:first-child {
+  margin-left: -4px;
+  white-space: nowrap;
+}
+
+.chr-the-range .chr-range-list > div:nth-last-child(2) {
+  margin-right: -2px;
+}
+
+.the-grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+.the-grid .grid-item {
+  width: calc(33.333% - 20px);
+  margin: 10px;
+  border-bottom:  5px solid #52bca6;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+  display: flex;
+    flex-flow: column wrap;
+}
+
+.the-grid .grid-item img {
+    height: 155px;
+    object-fit: cover;
+}
+
+.the-grid .grid-item h3 {
+    color: #52bca6;
+    padding: 10px 5px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.grid-load-more {
+  margin: 15px auto;
+  display: block;
+  padding: 5px 25px;
+  background-color: #52bca6;
+  color: white;
+  border: none;
+}
+
+.grid-load-more:hover {
+  color: white;
+}
+
+.grid-description {
+  margin: 0 10px;
+}
+
+.grid-read-more {
+  margin-top: auto;
+  padding: 10px;
+  color: #52bca6;
+}
+
+.chr-search-sidebar .check-container {
+  white-space: normal;
+}
+
+.comparegrid-content > .comparegrid-title,
+.comparegrid-content > .comparegrid-description {
+  display: none;
+}
+
+.comparegrid-description {
+  overflow: hidden;
+}
+
+/* Customize the label (the container) */
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 5px 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.3;
+  font-size: 15px;
+  color: #52bca6;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 8px;
+  padding-bottom: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;  
+}
+/* Hide the browser's default checkbox */
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.check-container .checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #52bca6;
+  border-radius: 5px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
+  background-color: #52bca6;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.check-container .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark::after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-container .checkmark::after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.breed-letters-filter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 10px;  
+}
+
+.breed-letters-filter .breed-letters-filter__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.breed-letters-filter .breed-letters-filter__letter {
+  width: 55px;
+  box-sizing: border-box;  
+}
+
+.breed-letters-filter .breed-letters-filter__letter > a {
+    border: 1px solid #52bca6;
+    padding: 0;
+    border-radius: 5px;
+    color: #52bca6;
+    width: 46px;
+    display: inline-block;
+    margin: 6px 0;
+    text-align: center;
+    font-size: 15px;
+    padding: 6px 0;
+}
+
+.breed-letters-filter__cancel,
+.breed-letters-filter__cancel:hover {
+    color: #52bca6;
+    font-size: 12px;  
+}
+
+.breed-letters-filter .breed-letters-filter__letter > a:hover,
+.breed-letters-filter .breed-letters-filter__letter > a.active {
+    color:  white;
+    background-color: #52bca6;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.chr-search-sidebar .accordion {
+  background-color: transparent;
+  color: #52bca6;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.chr-search-sidebar .active, .chr-search-sidebar .accordion:hover {
+  background-color: transparent;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.chr-search-sidebar .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-top: 1px solid #52bca6;
+}
+
+.chr-search-sidebar .accordion::after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 11px;
+  color: #52bca6;
+  float: right;
+  margin-left: 5px;
+  margin-top: 8px;
+}
+
+.chr-search-sidebar .active::after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.chr-search-sidebar .check-container {
+  border-top: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 10px 0 10px 34px;
+  color: inherit;
+}
+
+.chr-search-sidebar .check-container .checkmark {
+  top: 8px;
+}
+
+.chr-search-sidebar .check-container:last-child {
+  border-bottom: none;
+}
+
+.chr-search-sidebar .clear-all {
+  margin-right: 13px;  
+  margin-top: 5px;
+  display: inline-block;
+  color: #52bca6;
+}
+
+.chr-search-sidebar .submit-filter {
+    float: none;
+    padding: 5px 25px;
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #52bca6;
+    color: white;
+}
+
+/* The search field */
+.chr-grid-search .chr-input {
+  font-size: 16px;
+  border: 1px solid #52bca6;
+  background: none;
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+
+/* The search field when it gets focus/clicked on */
+.chr-grid-search .chr-input:focus {outline: none;}
+
+/* The container <div> - needed to position the dropdown content */
+.chr-grid-search.dropdown {
+  position: relative;
+  display: block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.chr-grid-search.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  width:  100%;
+  border: 1px solid #52bca6;
+  z-index: 1;
+  top: 44px;
+  background-color: white;
+  border-top: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  max-height: 132px;
+  overflow: auto;  
+}
+
+/* Links inside the dropdown */
+.chr-grid-search.dropdown .dropdown-content a {
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.chr-grid-search.dropdown .show {display:block;}
+
+.compare-wrapper {
+  display: none;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding: 15px;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 100;
+}
+
+.compare-wrapper.show {
+  display: flex;
+}
+
+.compare-wrapper .compare-item {
+  padding: 0 10px;
+}
+
+.compare-wrapper .compare-item > span {
+  font-weight: bold;
+  margin: 0 0 0 10px;
+  cursor: pointer;
+}
+
+.chr-grid-search.dropdown.secondary {
+  display: none;
+}
+
+.compare-please {
+  border: 1px solid white;
+  padding: 5px 10px;
+  background-color: #52bca6;
+  color: white;
+  text-transform: uppercase;
+  transition: 0.3s all ease-in-out;
+}
+
+body .compare-please:hover {
+  background-color: white;
+  border-color: white;
+  transition: 0.3s all ease-in-out;
+}
+
+.compare-wrapper > span {
+  font-weight: bold;
+  margin-left: auto;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.the-grid .grid-item .check-container.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.page-template-compare-template h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.compare-grid-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.compare-grid-wrapper-description {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    overflow: hidden;  
+    text-align: center;
+}
+
+.compare-grid-wrapper .compare-item {
+  margin: 0 15px;
+  text-align: center;
+  position: relative;
+}
+
+.compare-grid-wrapper .compare-item h2 {
+  margin-top: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 25px;
+}
+
+.compare-grid-wrapper .compare-item .the-image .compare-image {
+  height: 280px;
+  object-fit: cover;
+}
+
+.compare-grid-wrapper .compare-item .the-image .close-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background-size: contain;
+  top: -10px;
+  left: -11px;
+  background-color: white;
+  border-radius: 52%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.compare-grid-wrapper .compare-item .the-label {
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.compare-grid-wrapper .compare-item .the-value {
+  background-color: rgba(82,188,166,0.1);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 10px;  
+}
+
+.compare-grid-wrapper .compare-item::after {
+  content: "VS.";
+  position: absolute;
+  right: -26px;
+  top: 125px;
+  font-size: 13px;
+}
+
+.compare-grid-wrapper.items-1 .compare-item,
+.compare-grid-wrapper.items-1 .next-item {
+  max-width: calc(50% - 30px);
+}
+
+.compare-grid-wrapper.items-2 .compare-item,
+.compare-grid-wrapper.items-2 .next-item {
+  max-width: calc(33.33% - 30px);
+}
+
+.compare-grid-wrapper.items-3 .compare-item,
+.compare-grid-wrapper.items-3 .next-item {
+  max-width: calc(25% - 30px);
+}
+
+.compare-grid-wrapper.items-4 .compare-item,
+.compare-grid-wrapper.items-4 .next-item,
+.compare-grid-wrapper.items-5 .compare-item {
+  max-width: calc(20% - 30px);
+}
+
+.compare-grid-wrapper.items-5 .compare-item .the-image .compare-image,
+.compare-grid-wrapper.items-4 .compare-item .the-image .compare-image,
+.compare-grid-wrapper.items-4 .next-item .the-image {
+  height: 160px;
+}
+
+.compare-grid-wrapper.items-3 .compare-item .the-image .compare-image,
+.compare-grid-wrapper.items-3 .next-item .the-image {
+  height: 195px;
+}
+
+.compare-grid-wrapper.items-2 .compare-item .the-image .compare-image,
+.compare-grid-wrapper.items-2 .next-item .the-image {
+  height: 210px;
+}
+
+.compare-grid-wrapper.items-5 .compare-item:last-child::after {
+  content: "";
+  display: none;
+}
+
+.next-item {
+  max-width: calc(20% - 30px);
+  margin: 0 15px;
+  text-align: center;
+}
+
+.next-item .the-image {
+    height: 280px;
+    background-color: rgba(82,188,166,0.1);  
+}
+
+.next-item h2 {
+  margin-top: 15px;
+  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+  font-size: 25px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #52bca6;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field:focus {
+    outline: 1px solid #52bca6;
+}
+
+.compare-go-to {
+  margin-top: 25px;
+  background-color: #52bca6;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  border: 1px solid #52bca6;
+}
+
+.compare-go-to:hover {
+  background-color: white;
+  color: #52bca6;
+}
+
+.compare-grid-wrapper .compare-item .chr-the-range {
+  margin-top: 10px;
+}
+
+img.arvhive-description {
+  max-width: 300px;
+  float: left;
+  margin: 10px 15px 15px 0;
+}
+
+.compare-grid-wrapper .next-item .the-image {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.compare-grid-wrapper .next-item .the-image img {
+  max-width: 50%;
+}
+
+@media (max-width: 991px) {
+
+  .breed-letters-filter {
+    margin: 10px 5px;
+  }
+
+  .comparegrid-content {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .comparegrid-content .comparegrid-sidebar {
+    width: 100%;
+    float: none;
+    order: 1;
+  }
+
+  .comparegrid-content .comparegrid-main {
+    width: 100%;
+    float: none;
+    padding: 0 0 30px 0;
+    order: 2;
+  }  
+  .the-grid .grid-item {
+    width: calc(50% - 10px);
+    margin: 5px;
+  }
+  .the-grid .grid-item img {
+      height: 210px;
+  }
+  .check-container {
+    padding-top: 7px;
+      padding-bottom: 3px;
+  }
+  .check-container .checkmark {
+    top: 4px;
+  }
+  .comparegrid-content > .comparegrid-title,
+  .comparegrid-content > .comparegrid-description {
+    display: block;
+  }
+
+  .comparegrid-content .comparegrid-main .comparegrid-title,
+  .comparegrid-content .comparegrid-main .comparegrid-description {
+    display: none;
+  }
+
+  .the-grid {
+    margin-top: 30px;
+  }
+
+}
+
+@media (max-width:767px) {
+
+  .compare-grid-wrapper {
+    flex-flow: column wrap;
+  }
+
+  .compare-grid-wrapper.items-1 .compare-item,
+  .compare-grid-wrapper.items-1 .next-item,
+  .compare-grid-wrapper.items-2 .compare-item,
+  .compare-grid-wrapper.items-2 .next-item ,
+  .compare-grid-wrapper.items-3 .compare-item,
+  .compare-grid-wrapper.items-3 .next-item,
+  .compare-grid-wrapper.items-4 .compare-item,
+  .compare-grid-wrapper.items-4 .next-item,
+  .compare-grid-wrapper.items-5 .compare-item,
+  .compare-grid-wrapper.items-5 .next-item {
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .compare-grid-wrapper .compare-item::after {
+    content: "";
+    display: none;
+  }
+
+  .compare-grid-wrapper.items-5 .compare-item .the-image .compare-image,
+  .compare-grid-wrapper.items-4 .compare-item .the-image .compare-image,
+  .compare-grid-wrapper.items-3 .compare-item .the-image .compare-image,
+  .compare-grid-wrapper.items-2 .compare-item .the-image .compare-image {
+    height: auto;
+  }
+
+  .compare-grid-wrapper.items-2 .next-item .the-image,
+  .compare-grid-wrapper.items-3 .next-item .the-image,
+  .compare-grid-wrapper.items-4 .next-item .the-image {
+    height: 150px;
+  }
+
+  img.arvhive-description {
+    max-width: 300px;
+    float: none;
+    margin: 15px auto;
+    display: block;
+  }
+  .comparegrid-title {
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 486px) {
+  .the-grid .grid-item {
+    width: 100%;
+    margin: 5px;
+  }
+  .the-grid .grid-item img {
+      height: auto;
+  } 
+}
