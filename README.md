@@ -1,6 +1,8 @@
 # gitter-vergleichen
  Sidebar Filter Search And Compare WordPress Plugin
  
+ ** URL:** http://hundeo.com/hunderassen
+ 
 ## gitter-vergleichen.php
 
 * Includes ACF Pro files.
